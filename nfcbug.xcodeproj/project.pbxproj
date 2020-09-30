@@ -15,6 +15,7 @@
 		0A35727C25247C62000C076D /* nfcbug.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A35727A25247C62000C076D /* nfcbug.xcdatamodeld */; };
 		0A35728725247C63000C076D /* nfcbugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A35728625247C63000C076D /* nfcbugTests.swift */; };
 		0A35729225247C63000C076D /* nfcbugUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A35729125247C63000C076D /* nfcbugUITests.swift */; };
+		0A3572AD252484A0000C076D /* Nfc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3572AC252484A0000C076D /* Nfc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		0A35728D25247C63000C076D /* nfcbugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nfcbugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A35729125247C63000C076D /* nfcbugUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nfcbugUITests.swift; sourceTree = "<group>"; };
 		0A35729325247C63000C076D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A3572A225247CB2000C076D /* nfcbug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nfcbug.entitlements; sourceTree = "<group>"; };
+		0A3572AC252484A0000C076D /* Nfc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nfc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 		0A35726E25247C60000C076D /* nfcbug */ = {
 			isa = PBXGroup;
 			children = (
+				0A3572A225247CB2000C076D /* nfcbug.entitlements */,
 				0A35726F25247C60000C076D /* nfcbugApp.swift */,
 				0A35727125247C60000C076D /* ContentView.swift */,
 				0A35727325247C62000C076D /* Assets.xcassets */,
@@ -106,6 +110,7 @@
 				0A35727D25247C62000C076D /* Info.plist */,
 				0A35727A25247C62000C076D /* nfcbug.xcdatamodeld */,
 				0A35727525247C62000C076D /* Preview Content */,
+				0A3572AC252484A0000C076D /* Nfc.swift */,
 			);
 			path = nfcbug;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A35727C25247C62000C076D /* nfcbug.xcdatamodeld in Sources */,
+				0A3572AD252484A0000C076D /* Nfc.swift in Sources */,
 				0A35727925247C62000C076D /* Persistence.swift in Sources */,
 				0A35727225247C60000C076D /* ContentView.swift in Sources */,
 				0A35727025247C60000C076D /* nfcbugApp.swift in Sources */,
@@ -425,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = nfcbug/nfcbug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"nfcbug/Preview Content\"";
 				DEVELOPMENT_TEAM = P58RVUCT6F;
@@ -447,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = nfcbug/nfcbug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"nfcbug/Preview Content\"";
 				DEVELOPMENT_TEAM = P58RVUCT6F;

@@ -9,14 +9,25 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    private var nfc = Nfc()
+    @State var txt: String = ""
 
     var body: some View {
+        Button(action: startNfc) {
+            Label(" --- Start NFC test --- ", systemImage: "plus")
+        }
+        
+        TextEditor(text: $txt)
+            .lineLimit(10)
+            .font(.subheadline)
+        
         List {
             ForEach(items) { item in
                 Text("Item at \(item.timestamp!, formatter: itemFormatter)")
@@ -24,14 +35,23 @@ struct ContentView: View {
             .onDelete(perform: deleteItems)
         }
         .toolbar {
-            #if os(iOS)
             EditButton()
-            #endif
-
             Button(action: addItem) {
                 Label("Add Item", systemImage: "plus")
             }
         }
+//        Button(action: addItem) {
+//            Label("Add Item", systemImage: "plus")
+//        }
+    }
+    
+    mutating func setTxt(_ txt: String){
+        self.txt = txt
+    }
+    
+    private func startNfc() {
+        nfc.cv = self
+        nfc.startNfc()
     }
 
     private func addItem() {
