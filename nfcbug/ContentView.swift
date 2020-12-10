@@ -17,11 +17,20 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     private var nfc = Nfc()
+    private var nfcClosePoc = NfcClosePoc()
     @State var txt: String = ""
 
     var body: some View {
+        Spacer(minLength: 20.0)
+        
         Button(action: startNfc) {
-            Label(" --- Start NFC test --- ", systemImage: "plus")
+            Label(" Start NFC test: Open race", systemImage: "plus")
+        }
+        
+        Spacer(minLength: 20.0)
+        
+        Button(action: startNfcClosePoC) {
+            Label(" Start NFC test: Close race", systemImage: "plus")
         }
         
         TextEditor(text: $txt)
@@ -40,9 +49,6 @@ struct ContentView: View {
                 Label("Add Item", systemImage: "plus")
             }
         }
-//        Button(action: addItem) {
-//            Label("Add Item", systemImage: "plus")
-//        }
     }
     
     mutating func setTxt(_ txt: String){
@@ -54,6 +60,11 @@ struct ContentView: View {
         nfc.startNfc()
     }
 
+    private func startNfcClosePoC() {
+        nfcClosePoc.cv = self
+        nfcClosePoc.startNfc()
+    }
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)

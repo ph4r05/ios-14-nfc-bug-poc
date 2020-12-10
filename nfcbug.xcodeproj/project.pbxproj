@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1078D22582B25D00C2E8E1 /* NfcClosePoC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1078D12582B25D00C2E8E1 /* NfcClosePoC.swift */; };
+		0A1078D32582B25D00C2E8E1 /* NfcClosePoC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1078D12582B25D00C2E8E1 /* NfcClosePoC.swift */; };
+		0A1078D42582B25D00C2E8E1 /* NfcClosePoC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1078D12582B25D00C2E8E1 /* NfcClosePoC.swift */; };
 		0A35727025247C60000C076D /* nfcbugApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A35726F25247C60000C076D /* nfcbugApp.swift */; };
 		0A35727225247C60000C076D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A35727125247C60000C076D /* ContentView.swift */; };
 		0A35727425247C62000C076D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A35727325247C62000C076D /* Assets.xcassets */; };
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1078D12582B25D00C2E8E1 /* NfcClosePoC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcClosePoC.swift; sourceTree = "<group>"; };
 		0A35726C25247C60000C076D /* nfcbug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nfcbug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A35726F25247C60000C076D /* nfcbugApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nfcbugApp.swift; sourceTree = "<group>"; };
 		0A35727125247C60000C076D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				0A35727A25247C62000C076D /* nfcbug.xcdatamodeld */,
 				0A35727525247C62000C076D /* Preview Content */,
 				0A3572AC252484A0000C076D /* Nfc.swift */,
+				0A1078D12582B25D00C2E8E1 /* NfcClosePoC.swift */,
 			);
 			path = nfcbug;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A35727C25247C62000C076D /* nfcbug.xcdatamodeld in Sources */,
+				0A1078D22582B25D00C2E8E1 /* NfcClosePoC.swift in Sources */,
 				0A3572AD252484A0000C076D /* Nfc.swift in Sources */,
 				0A35727925247C62000C076D /* Persistence.swift in Sources */,
 				0A35727225247C60000C076D /* ContentView.swift in Sources */,
@@ -283,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A35728725247C63000C076D /* nfcbugTests.swift in Sources */,
+				0A1078D32582B25D00C2E8E1 /* NfcClosePoC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A35729225247C63000C076D /* nfcbugUITests.swift in Sources */,
+				0A1078D42582B25D00C2E8E1 /* NfcClosePoC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
