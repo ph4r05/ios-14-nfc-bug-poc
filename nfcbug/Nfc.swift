@@ -82,7 +82,7 @@ class Nfc: NSObject, NFCTagReaderSessionDelegate {
         logView("tagReaderSession didDetect tags: \(tags)")
         let tag = tags.first!
         if case .iso7816(let ctag) = tag {
-            logView("Tag detected, ID: \(ctag.identifier.hexEncodedString()), AID: \(ctag.initialSelectedAID), histDat: \(ctag.historicalBytes?.hexEncodedString() ?? "-"), desc: \(ctag.description)")
+            logView("Tag detected, ID: \(ctag.identifier.hexEncodedString()), AID: \(ctag.initialSelectedAID), histData: \(ctag.historicalBytes?.hexEncodedString() ?? "-"), appData: \(ctag.applicationData?.hexEncodedString() ?? "-")")
         }
     }
     
