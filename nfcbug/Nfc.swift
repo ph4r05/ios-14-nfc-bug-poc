@@ -3,6 +3,7 @@
 //  nfcbug
 //
 //  Created by Dusan Klinec on 30/09/2020.
+//  AIDS: https://www.eftlab.com/knowledge-base/211-emv-aid-rid-pix/
 //
 
 import Foundation
@@ -78,7 +79,11 @@ class Nfc: NSObject, NFCTagReaderSessionDelegate {
     }
     
     func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
-        logView("tagReaderSession didDetect tags")
+        logView("tagReaderSession didDetect tags: \(tags)")
+        let tag = tags.first!
+        if case .iso7816(let ctag) = tag {
+            logView("Tag detected, ID: \(ctag.identifier.hexEncodedString()), AID: \(ctag.initialSelectedAID), histDat: \(ctag.historicalBytes?.hexEncodedString() ?? "-"), desc: \(ctag.description)")
+        }
     }
     
     func logView(_ text: String){
@@ -95,5 +100,18 @@ class Nfc: NSObject, NFCTagReaderSessionDelegate {
         }
         return Double(Int64(a!.uptimeNanoseconds) - Int64(b!.uptimeNanoseconds)) / nanos;
     }
+    
+
 }
 
+extension Data {
+    struct HexEncodingOptions: OptionSet {
+        let rawValue: Int
+        static let upperCase = HexEncodingOptions(rawValue: 1 << 0)
+    }
+
+    func hexEncodedString(options: HexEncodingOptions = []) -> String {
+        let format = options.contains(.upperCase) ? "%02hhX" : "%02hhx"
+        return map { String(format: format, $0) }.joined()
+    }
+}
