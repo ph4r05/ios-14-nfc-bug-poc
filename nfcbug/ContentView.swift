@@ -18,20 +18,27 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     private var nfc = Nfc()
     private var nfcClosePoc = NfcClosePoc()
+    private var nfcDemo = NfcDemo()
     @State var txt: String = ""
 
     var body: some View {
         Spacer(minLength: 20.0)
         
         Button(action: startNfc) {
-            Label(" Start NFC test: Open race", systemImage: "plus")
+            Label(" Start NFC test: Open race", systemImage: "play")
         }
         
         Spacer(minLength: 20.0)
         
         Button(action: startNfcClosePoC) {
-            Label(" Start NFC test: Close race", systemImage: "plus")
+            Label(" Start NFC test: Close race", systemImage: "play")
         }
+        
+        Spacer(minLength: 20.0)
+        Button(action: simpleOpen) {
+            Label(" Open NFC session", systemImage: "play")
+        }
+        
         
         TextEditor(text: $txt)
             .lineLimit(10)
@@ -63,6 +70,11 @@ struct ContentView: View {
     private func startNfcClosePoC() {
         nfcClosePoc.cv = self
         nfcClosePoc.startNfc()
+    }
+    
+    private func simpleOpen() {
+        nfcDemo.cv = self
+        nfcDemo.startNfc()
     }
     
     private func addItem() {
